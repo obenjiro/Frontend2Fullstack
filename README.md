@@ -1,0 +1,371 @@
+# Frontend -> Fullstack
+
+Список материалов и данных необходимых для того чтобы стать полноценным Fullstack программистом. Навык помеченный !!! в начале - обязателен к изучению
+
+---------
+
+## Basics
+- !!! Shell scripts and basic linux commands
+    - Basic commands
+        - http://mally.stanford.edu/~sr/computing/basic-unix.html
+    - Operator chaining
+        - https://www.tecmint.com/chaining-operators-in-linux-with-practical-examples/
+- !!! Brew
+    - https://brew.sh
+- !!! Tmux
+    - https://hackernoon.com/a-gentle-introduction-to-tmux-8d784c404340
+- !!! Vim
+    - https://www.tutorialspoint.com/vim/vim_getting_familiar.htm
+    - https://www.openvim.com/
+- Your OWN github repository with .tmux.conf, .vimrc, etc.
+    - https://github.com/aiboy/terminal-env
+- OSI Model (https://en.wikipedia.org/wiki/OSI_model)
+    - Layer 7: Application layer
+        - !!! HTTP
+            - HTTP Spec
+                - https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+            - HTTP status codes
+                - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+        - !!! HTTP/2
+            - https://en.wikipedia.org/wiki/HTTP/2
+        - !!! SMTP
+            - https://en.wikipedia.org/wiki/SMTP
+        - !!! NTP (network time protocol)
+            - https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP
+    - Layer 6: Presentation layer
+        - Telnet
+            - https://en.wikipedia.org/wiki/Telnet
+    - Layer 5: Session layer
+        - SOCKS
+            - https://en.wikipedia.org/wiki/SOCKS
+    - Layer 4: Transport layer
+        - !!! TCP, Transmission Control Protocol
+            - https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+        - !!! UDP, User Datagram Protocol
+            - https://en.wikipedia.org/wiki/User_Datagram_Protocol
+    - Layer 3: Network layer
+        - IPv4/IPv6, Internet Protocol
+            - https://en.wikipedia.org/wiki/Internet_Protocol
+            - https://en.wikipedia.org/wiki/IPv4
+            - https://en.wikipedia.org/wiki/IPv6
+    - Layer 2: Data link layer
+        - Ethernet
+            - https://en.wikipedia.org/wiki/Ethernet
+    - Layer 1: Physical layer
+        - Bluetooth physical layer
+        - Ethernet physical layer
+        - USB physical layer
+- !!! Web Server vs Application Server vs Web Sites & Services
+    - !!! Web Servers
+        - !!! Nginx
+            - https://en.wikipedia.org/wiki/Nginx
+        - !!! Apache
+            - https://en.wikipedia.org/wiki/Apache_HTTP_Server
+        - IIS (Microsoft Windows only)
+            - https://en.wikipedia.org/wiki/Internet_Information_Services
+    - Application Server
+        - https://en.wikipedia.org/wiki/Application_server
+    - Web Sites & Services
+        - РHP, Node.js, Java, .Net, Go.. etc.
+- Methodoligies of development
+    - Waterflow
+        - https://en.wikipedia.org/wiki/Waterfall_model
+    - V Model
+        - https://en.wikipedia.org/wiki/V-Model_(software_development)
+    - !!! Agile
+        - !!! Head First - Agile book (must read!!!)
+        - Scrum
+        - Kanban
+        - Lean
+
+---------
+
+## Requirements Gathering Stage
+- Terms of reference / Техническое задание (ТЗ)
+- Expected Load
+    - Ожидаемая нагрузка на сервер (10 RPS - 10 Reqest Per Second)
+- Service quality requirements
+    - Uptime
+    - Backups
+- Hardware Requirements
+    - Запрос нужного железа (серверов или cloud)
+    - Заказываем исходя из Expected Load
+- User Stories (Agile)
+- Persormance Budget
+    - Frontend
+        - Maximun Bundle Size
+        - TTI, TTFB, FMP, TTFI
+    - Backend
+        - Minimum Response Time
+        - Minumum RPS
+- MVP
+    - https://en.wikipedia.org/wiki/Minimum_viable_product
+- Estimation
+    - https://en.wikipedia.org/wiki/Software_development_effort_estimation
+
+## Design Stage (самая первая стадия - проектирование, сбор требований)
+- Server deployment
+    -  Low level deployment strategies
+        - FTP/SFTP
+            - https://www.jetbrains.com/help/webstorm/creating-a-remote-server-configuration.html
+        - rsync
+            - https://habr.com/sandbox/37102/
+        - Github
+            - Позволякет деплоить с помощью Git Push
+            - https://gist.github.com/oodavid/1809044
+        - Debianization 
+            - Позволяет деполоить с помощью apt-get install в Lunux
+            - https://wiki.debian.org/HowToPackageForDebian
+    - Types of servers (by time)
+        - Development server
+        - Testing server
+        - Staging server
+        - Production server
+    - Types of servers (by location)
+        - !!! Localserver (localhost - 127.0.0.1)
+        - !!! LAN (hostname - 0.0.0.1:80)
+        - Web hosting service (https://en.wikipedia.org/wiki/Web_hosting_service)
+            - One Click Install
+                - https://infobox.ru/hosting/wordpress/
+            - !!! Shared web hosting service
+                - Старнадртные мини сервера для PHP
+                - https://infobox.ru/hosting/linux/
+            - !!! Virtual Dedicated Server / Virtual Private Server (VPS)
+                - https://en.wikipedia.org/wiki/Virtual_private_server
+            - !!! Dedicated hosting service
+                - https://selectel.ru/services/dedicated/
+            - Colocation web hosting service
+                - Почти как Dedicated только вмес
+            - Cloud hosting
+                - Infrastructure as a service (IaaS)
+                    - https://en.wikipedia.org/wiki/Infrastructure_as_a_service
+                - Platform as a service (PaaS)
+                    - https://en.wikipedia.org/wiki/Platform_as_a_service
+                - Software as a service (SaaS)
+                    - https://en.wikipedia.org/wiki/Software_as_a_service
+                - Mobile "backend" as a service (MBaaS)
+                    - https://en.wikipedia.org/wiki/Mobile_backend_as_a_service
+                - Serverless computing
+                    - https://en.wikipedia.org/wiki/Serverless_computing
+                - Function as a service (FaaS) / Serverless Apps
+                    - https://en.wikipedia.org/wiki/Function_as_a_service
+            - Clustered hosting
+            - Grid hosting
+            - Home server
+- DBA (data base architecture)
+    - !!! Normalization Forms
+        - https://en.wikipedia.org/wiki/Database_normalization
+    - !!! CAP theorem
+        - https://en.wikipedia.org/wiki/CAP_theorem
+    - Types
+        - !!! SQL (relational model)
+            - https://en.wikipedia.org/wiki/Relational_model
+            - https://en.wikipedia.org/wiki/SQL
+        - !!! NoSQL
+            - https://en.wikipedia.org/wiki/NoSQL
+        - NewSQL
+            - https://en.wikipedia.org/wiki/NewSQL
+    - Database Migration
+        - http://vaidehijoshi.github.io/blog/2015/05/19/the-secret-life-of-your-database-part-1-migrations/
+- Arhetecture Styles
+    - Default Styles
+        - !!! REST
+            - https://en.wikipedia.org/wiki/Representational_state_transfer
+        - !!! RPC
+            - https://en.wikipedia.org/wiki/Remote_procedure_call
+        - GraphQL
+            - https://graphql.org/
+            - https://www.apollographql.com/ (поддерживает подписки)
+    - Push styles
+        - HTTP/2
+            - https://en.wikipedia.org/wiki/HTTP/2_Server_Push
+        - Commet
+            - https://en.wikipedia.org/wiki/Comet_(programming)
+        - WebSockets
+            - https://en.wikipedia.org/wiki/WebSocket
+- Communication with Frontend
+    - Same-origin policy problem
+        - Description of problem
+            - https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+        - !!! CORS
+            - !!! Cors In Action book (must read!)
+            - https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+        - JSONP (устарело)
+            - https://en.wikipedia.org/wiki/JSONP
+        - Iframe Comunication
+            - PostMessage
+                - https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+            - Iframe hack (устраело - use CORS)
+                - https://github.com/oyvindkinsey/easyXDM
+- Approaches
+    - Monolit (архитектура 1 сервера)
+    - Miscroservices
+        - https://blog.newrelic.com/technology/microservices-what-they-are-why-to-use-them/
+        - https://12factor.net/ru/
+- !!! Policy Review & Licence Review
+    -  !!! Check that framework & Library have good licence (never use GPL!!!)
+    - !!! Apache v2 is dangeraous (Trademark use)
+        - https://tldrlegal.com/
+        - https://choosealicense.com/licenses/
+- Web Arhitecture
+    - Example 
+        - https://engineering.videoblocks.com/web-architecture-101-a3224e126947
+    - Load Balancers
+    - Database Servers / Database Clusters
+    - CDN
+    - Caching Servers
+    - Job Queue Servers
+    - Full test search Servers
+    - Services
+    - Storage Server / Cloud Storage 
+- Scalability
+    - Horizontal and vertical scaling
+- UML
+    - Types
+        - Class Diagrams
+        - Sequence Diagrams
+        - Activity Diagrams
+        - State diagram
+    - Tools
+        - PlantUML
+        - StarUML
+        - StarUML -> JSweet -> Typescript
+- Design Patters
+    - Gang of 4 book 
+    - https://sourcemaking.com/design_patterns
+    - HeadFirst - Design patterns
+- CI (Continuos Integration)
+    - Jenkins
+        - https://www.tutorialspoint.com/jenkins/jenkins_quick_guide.htm
+
+---------
+
+- Development Stage (разработка)
+    - VCS (Version Control Systems)
+        - !!! Git
+            - !!! git-flow
+            - Commit Message Styleguide
+                - https://gist.github.com/abravalheri/34aeb7b18d61392251a2#generating-changelogmd
+            - Auto CHANGELOG generation
+                - https://github.com/conventional-changelog/standard-version
+        - Subservion (SVN)
+        - Mercurial 
+        - Concurrent Versions System (CVS) 
+    - Text Editors
+        - VIM
+        - Emacs
+        - Visual Studio Code
+        - WebStorm / PHPStorm / PyCharm
+        - Eclipse
+    - Linters
+        - ESLint
+        - TSLint
+    - Code formatters
+        - Prettier
+        - CSSComb
+    - Bootstraping
+        - Example Github repository
+        - Angular CLI
+        - Vue CLI
+        - Create React App
+        - yeoman
+        - slush
+    - Scaffolding
+        - Angular CLI Schematics
+        - Vue CLI plugins (Generator)
+            - https://cli.vuejs.org/dev-guide/plugin-dev.html#generator
+        - Redux CLI
+        - Plop
+    - Testing
+        - Frameworks
+            - Mocha/Chai
+            - Jasmine
+            - Jest
+        - Tests Runners
+            - Karma 
+            - Jest
+    - Reactoring
+        - Code Smeels 
+            - https://sourcemaking.com/refactoring/smells
+        - Refactoring techniques
+            - https://sourcemaking.com/refactoring/refactorings
+  
+---------
+
+- Test Stage (тестирование)
+    - E2E test
+        - Cypress.io
+            - https://www.cypress.io/
+        - Protractor
+            - https://www.protractortest.org/#/
+        - Nightwatch
+            - http://nightwatchjs.org/
+        - Puppetear
+            - https://github.com/GoogleChrome/puppeteer
+        - Selenium
+            - https://www.seleniumhq.org/
+    - Regression Testing
+    - Acceptence Tests
+
+---------
+
+- Staging Stage  (подготовка к релизу, выкатка в окружение похожее на production)
+    - Load testing (нагрузочное тестирование)
+        - About correct load testing
+            - https://www.digitalocean.com/community/tutorials/an-introduction-to-load-testing
+        - Tool: artilery (мой любимый)
+            - https://artillery.io/
+        - Tool: ab
+            - https://stackoverflow.com/questions/12732182/ab-load-testing
+        - Tool: Apache JMeter
+            - https://en.wikipedia.org/wiki/Apache_JMeter
+        - Tool: Gatling
+            - https://en.wikipedia.org/wiki/Gatling_(software)
+    - OWASP Security Test
+        - https://www.owasp.org/index.php/Web_Application_Security_Testing_Cheat_Sheet
+
+
+---------
+
+- Deployment Stage (выкатка в production окружение)
+    - Highlevel deployment strategeis
+        - https://thenewstack.io/deployment-strategies/
+        - http://blog.itaysk.com/2017/11/20/deployment-strategies-defined
+        - https://github.com/ContainerSolutions/k8s-deployment-strategies
+    - Backup (https://en.wikipedia.org/wiki/Backup)
+        - Data repository models
+            - Unstructured 
+            - Full only / System imaging 
+            - Incremental 
+            - Differential 
+            - Reverse delta 
+            - Continuous data protection 
+        - Storage Media
+            - Magnetic tape 
+            - Hard disk
+            - Optical storage 
+            - SSD/Solid state storage 
+            - Remote backup service AKA cloud backup 
+            - Floppy disk and its derivatives 
+    - Rollback Strategies
+        - https://www.ebayinc.com/stories/blogs/tech/zero-downtime-instant-deployment-and-rollback/
+    - Database Migration
+  
+---------
+
+- Maintainance Stage
+    - Loggin
+        - !!! Log rotation (можно делать как внешними иструментами так и средствами самого Web приложения)
+        - Logstash, Kibana, ElasticSearch
+    - Monitoring
+        - Graphana
+        - Emails
+    - Debugging
+        - Profiling
+        - Core dump
+    - Reports
+    - Web Analitics
+        - https://marketingplatform.google.com/about/
+    - SEO
+
+---------
