@@ -245,6 +245,7 @@
         - !!! Git
             - !!! git-flow
             - Commit Message Styleguide
+                - https://www.conventionalcommits.org/en/v1.0.0-beta.2/
                 - https://gist.github.com/abravalheri/34aeb7b18d61392251a2#generating-changelogmd
             - Auto CHANGELOG generation
                 - https://github.com/conventional-changelog/standard-version
