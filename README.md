@@ -218,6 +218,9 @@
     - Full test search Servers
     - Services
     - Storage Server / Cloud Storage 
+- Risks
+    - Backpressure
+        - https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7
 - Scalability
     - Horizontal and vertical scaling
 - UML
